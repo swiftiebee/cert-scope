@@ -1,0 +1,4 @@
+*.exe binary
+*.cer binary
+*.ico binary
+app/CertScope.exe.config -text

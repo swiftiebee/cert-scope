@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <OutputType>WinExe</OutputType><AssemblyName>CertScope</AssemblyName><RootNamespace>CertScope</RootNamespace>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion><GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute><OutputPath>artifacts\</OutputPath>
+    <ApplicationIcon>src\Assets\CertScope.ico</ApplicationIcon><PlatformTarget>AnyCPU</PlatformTarget><Optimize>true</Optimize><DebugType>pdbonly</DebugType>
+    <TargetFrameworkRootPath Condition="Exists('tools\net45\build\.NETFramework')">$(MSBuildProjectDirectory)\tools\net45\build\</TargetFrameworkRootPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System"/><Reference Include="System.Core"/><Reference Include="System.Data"/>
+    <Reference Include="System.Drawing"/><Reference Include="System.Windows.Forms"/><Reference Include="System.Security"/>
+    <Reference Include="System.Runtime.Serialization"/><Reference Include="System.Xml"/><Reference Include="System.Xml.Linq"/>
+    <Reference Include="System.IO.Compression"/><Reference Include="System.IO.Compression.FileSystem"/>
+    <Compile Include="src\*.cs"/><None Include="src\App.config"/>
+    <EmbeddedResource Include="src\Assets\CertScope.ico"><LogicalName>CertScope.Icon</LogicalName></EmbeddedResource>
+    <EmbeddedResource Include="sql\schema.sql"><LogicalName>CertScope.Schema.sql</LogicalName></EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+</Project>
